@@ -1,8 +1,11 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:personal_dev_portfolio/controllers/theme_controller.dart';
+import 'package:personal_dev_portfolio/utils/url_launcher.dart';
 
-import '../../../constants.dart';
-import '../../../responsive.dart';
+import '../../../core/constants.dart';
+import '../../../core/responsive.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({
@@ -11,59 +14,78 @@ class HomeBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(
-            "assets/images/bg.png",
-            fit: BoxFit.cover,
-          ),
-          Container(color: kDarkColor.withOpacity(0.66)),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+    return GetBuilder<ThemeController>(
+        init: Get.find<ThemeController>(),
+        builder: (themeC) {
+          return AspectRatio(
+            aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
+            child: Stack(
+              fit: StackFit.expand,
               children: [
-                Text(
-                  "Discover my Amazing \nArt Space!",
-                  style: Responsive.isDesktop(context)
-                      ? Theme.of(context).textTheme.headline3!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          )
-                      : Theme.of(context).textTheme.headline5!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                Image.asset(
+                  "assets/images/bg.png",
+                  fit: BoxFit.cover,
                 ),
-                if (Responsive.isMobileLarge(context))
-                  const SizedBox(height: kDefaultPadding / 2),
-                MyBuildAnimatedText(),
-                SizedBox(height: kDefaultPadding),
-                if (!Responsive.isMobileLarge(context))
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: kDefaultPadding * 2,
-                          vertical: kDefaultPadding),
-                      backgroundColor: kPrimaryColor,
-                    ),
-                    child: Text(
-                      "EXPLORE NOW",
-                      style: TextStyle(color: kDarkColor),
-                    ),
+                Container(
+                  color: themeC.darkTheme
+                      ? kFadeColorDark.withOpacity(0.66)
+                      : kFadeColorLight.withOpacity(0.66),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: kDefaultPadding),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Discover my Amazing \nArt Space!",
+                        style: Responsive.isDesktop(context)
+                            ? Theme.of(context)
+                                .textTheme
+                                .headline3!
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                )
+                            : Theme.of(context)
+                                .textTheme
+                                .headline5!
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                      ),
+                      if (Responsive.isMobileLarge(context))
+                        const SizedBox(height: kDefaultPadding / 2),
+                      MyBuildAnimatedText(),
+                      SizedBox(height: kDefaultPadding),
+                      if (!Responsive.isMobileLarge(context))
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: kDefaultPadding * 2,
+                                vertical: kDefaultPadding),
+                            backgroundColor: kPrimaryColorDark,
+                          ),
+                          child: InkWell(
+                            onTap: () async {
+                              await meyoUrlLauncher(kGithubLink);
+                            },
+                            child: Text(
+                              "EXPLORE NOW",
+                              style: TextStyle(color: kFadeColorDark),
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
+                )
               ],
             ),
-          )
-        ],
-      ),
-    );
+          );
+        });
   }
 }
 
@@ -139,7 +161,7 @@ class FlutterCodedText extends StatelessWidget {
         children: [
           TextSpan(
             text: "flutter",
-            style: TextStyle(color: kPrimaryColor),
+            style: TextStyle(color: kPrimaryColorDark),
           ),
           TextSpan(text: ">"),
         ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../core/constants.dart';
 
 class AnimatedCounter extends StatelessWidget {
   const AnimatedCounter({
@@ -22,7 +22,7 @@ class AnimatedCounter extends StatelessWidget {
         style: Theme.of(context)
             .textTheme
             .headline6!
-            .copyWith(color: kPrimaryColor),
+            .copyWith(color: kPrimaryColorDark),
       ),
     );
   }

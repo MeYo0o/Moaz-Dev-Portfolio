@@ -1,5 +1,9 @@
 class Project {
-  final String? title, description;
+  final String title, description, url;
 
-  Project({this.title, this.description});
+  const Project({
+    required this.title,
+    required this.description,
+    required this.url,
+  });
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:personal_dev_portfolio/controllers/theme_controller.dart';
+import 'package:personal_dev_portfolio/utils/url_launcher.dart';
 
-import '../../../constants.dart';
+import '../../../core/constants.dart';
 import '../../../models/Project.dart';
-import '../../../responsive.dart';
+import '../../../core/responsive.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -14,35 +17,43 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(kDefaultPadding),
-      color: kSecondaryColor,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            project.title!,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2,
-          ),
-          Spacer(),
-          Text(
-            project.description!,
-            maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(height: 1.5),
-          ),
-          Spacer(),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              "Read More >>",
-              style: TextStyle(color: kPrimaryColor),
+    return GetBuilder<ThemeController>(
+        init: Get.find<ThemeController>(),
+        builder: (themeC) {
+          return Container(
+            padding: const EdgeInsets.all(kDefaultPadding),
+            color: themeC.darkTheme
+                ? kSecondaryColorDark
+                : kSecondaryColorLight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  project.title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.subtitle2,
+                ),
+                Spacer(),
+                Text(
+                  project.description,
+                  maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(height: 1.45),
+                ),
+                Spacer(),
+                TextButton(
+                  onPressed: () async {
+                    await meyoUrlLauncher(project.url);
+                  },
+                  child: Text(
+                    "Read More >>",
+                    style: TextStyle(color: kPrimaryColorDark),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
+        });
   }
 }

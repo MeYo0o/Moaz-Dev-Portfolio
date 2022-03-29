@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
-import '../../responsive.dart';
+import '../../core/constants.dart';
+import '../../core/responsive.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
       appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(
-              backgroundColor: kBGColor,
+              backgroundColor: kBGColorDark,
               leading: Builder(
                 builder: (context) => IconButton(
                   onPressed: () {

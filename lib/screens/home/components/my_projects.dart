@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
-import '../../../models/Project.dart';
-import '../../../responsive.dart';
+import '../../../core/constants.dart';
+import '../../../core/responsive.dart';
 import 'project_card.dart';
 
 class MyProjects extends StatelessWidget {
@@ -48,18 +46,21 @@ class ProjectsGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: kProjects.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: crossAxisCount,
-        childAspectRatio: childAspectRatio,
-        crossAxisSpacing: kDefaultPadding - kProjectPaddingSubtraction,
-        mainAxisSpacing: kDefaultPadding - kProjectPaddingSubtraction,
-      ),
-      itemBuilder: (context, index) => ProjectCard(
-        project: kProjects[index],
+    return Padding(
+      padding: const EdgeInsets.only(right: kDefaultPadding),
+      child: GridView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: kProjects.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisCount,
+          childAspectRatio: childAspectRatio,
+          crossAxisSpacing: kDefaultPadding - kProjectPaddingSubtraction,
+          mainAxisSpacing: kDefaultPadding - kProjectPaddingSubtraction,
+        ),
+        itemBuilder: (context, index) => ProjectCard(
+          project: kProjects[index],
+        ),
       ),
     );
   }

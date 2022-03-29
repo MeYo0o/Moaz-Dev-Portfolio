@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personal_dev_portfolio/constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:personal_dev_portfolio/core/constants.dart';
+import 'package:personal_dev_portfolio/controllers/theme_controller.dart';
 
 class MyInfo extends StatelessWidget {
   const MyInfo({
@@ -8,34 +11,57 @@ class MyInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.23,
-      child: Container(
-        color: Color(0xFF242430),
-        child: Column(
-          children: [
-            Spacer(flex: 2),
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage("assets/images/profile-pic.jpg"),
+    return GetBuilder<ThemeController>(
+      init: Get.find<ThemeController>(),
+      builder: (themeC) {
+        return AspectRatio(
+          aspectRatio: 1.16,
+          child: Container(
+            color: themeC.darkTheme
+                ? kSecondaryColorDark
+                : kSecondaryColorLight,
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    onPressed: () {
+                      themeC.toggleTheme();
+                    },
+                    icon: Icon(
+                      themeC.darkTheme
+                          ? FontAwesomeIcons.solidSun
+                          : FontAwesomeIcons.moon,
+                      color: themeC.darkTheme
+                          ? kIconColorDark
+                          : kIconColorLight,
+                    ),
+                  ),
+                ),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage:
+                      AssetImage("assets/images/profile-pic.jpg"),
+                ),
+                Spacer(),
+                Text(
+                  kUserName,
+                  style: Theme.of(context).textTheme.subtitle2,
+                ),
+                Text(
+                  kJobTitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w200,
+                    height: 1.5,
+                  ),
+                ),
+                Spacer(flex: 2),
+              ],
             ),
-            Spacer(),
-            Text(
-              kUserName,
-              style: Theme.of(context).textTheme.subtitle2,
-            ),
-            Text(
-              kJobTitle,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.w200,
-                height: 1.5,
-              ),
-            ),
-            Spacer(flex: 2),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

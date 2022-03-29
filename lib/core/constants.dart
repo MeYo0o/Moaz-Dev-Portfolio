@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'models/Project.dart';
-import 'models/Recommendation.dart';
+import '../models/Project.dart';
+import '../models/Recommendation.dart';
 
 //User Related Stuff
 const String kUserName = 'Moaz Ahmed';
 const String kJobTitle = 'Flutter Developer';
+const String kGithubLink = 'https://github.com/MeYo0o/';
+const String kTwitterLink = 'https://twitter.com/EngMeyo';
+const String kLinkedInLink =
+    'https://www.linkedin.com/in/moaz-ahmed-146a16b8/';
 const String kResidence = 'Egypt';
 const String kCity = 'Giza';
-final int kAge = DateTime.now().year - 1993;
+const int _birthYear = 1993;
+final int kAge = DateTime.now().year - _birthYear;
 const Map<String, double> kDevSkills = {
   'Flutter': 0.75,
   'Nodejs': 0.60,
@@ -51,6 +56,16 @@ final List<Recommendation> kRecommendations = [
     source: "Linkedin",
     text: "recommendation body",
   ),
+  Recommendation(
+    name: "Name 3",
+    source: "Linkedin",
+    text: "recommendation body",
+  ),
+  Recommendation(
+    name: "Name 4",
+    source: "Linkedin",
+    text: "recommendation body",
+  ),
 ];
 
 //Projects
@@ -59,6 +74,7 @@ List<Project> kProjects = [
     title: "Food Delivery App with Firebase",
     description:
         "A food delivery app with firebase backend. with all the features like user registration, login, food item list, cart, order history, payment, and much more.",
+    url: 'https://github.com/MeYo0o/foody/',
   ),
   Project(
     title: "E-Commerce Complete App - Flutter UI",
@@ -67,15 +83,37 @@ List<Project> kProjects = [
         "features like user "
         "registration, login, product item list, cart, order history, "
         "payment, and much more.",
+    url: 'https://github.com/MeYo0o/E-Commerce-App',
+  ),
+  Project(
+    title: "",
+    description: ".",
+    url: '',
+  ),
+  Project(
+    title: "",
+    description: ".",
+    url: '',
   ),
 ];
 
 //Colors
-const kPrimaryColor = Color(0xFFFFC107);
-const kSecondaryColor = Color(0xFF242430);
-const kDarkColor = Color(0xFF191923);
-const kBodyTextColor = Color(0xFF8B8B8D);
-const kBGColor = Color(0xFF1E1E28);
+//Dark
+const kPrimaryColorDark = Color(0xFFFFC107);
+const kSecondaryColorDark = Color(0xFF242430);
+const kFadeColorDark = Color(0xFF191923);
+const kBodyTextColorDark = Color(0xFF8B8B8D);
+const kBGColorDark = Color(0xFF1E1E28);
+const kIconColorDark = Colors.white;
+
+//Light
+const kPrimaryColorLight = Color(0xFFFFC107);
+const kSecondaryColorLight = Color(0xFF96624A);
+const kFadeColorLight = Color(0xFF8A5A44);
+const kBodyTextColorLight = Color(0xFFF7E6DE);
+const kBGColorLight = Color(0xFF774936);
+const kIconColorLight = Colors.white;
+
 //Padding
 const kDefaultPadding = 20.0;
 const kProjectPaddingSubtraction = 5.0;

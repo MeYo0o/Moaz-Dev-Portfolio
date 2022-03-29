@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:personal_dev_portfolio/controllers/theme_controller.dart';
+import 'package:personal_dev_portfolio/utils/url_launcher.dart';
 
-import '../../../constants.dart';
+import '../../../core/constants.dart';
 import 'area_info_text.dart';
 import 'coding.dart';
 import 'knowledge.dart';
@@ -15,85 +18,120 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController _sc = ScrollController();
     return Drawer(
       child: SafeArea(
-        child: Column(
-          children: [
-            MyInfo(),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.all(kDefaultPadding),
-                child: Column(
-                  children: [
-                    AreaInfoText(
-                      title: "Residence",
-                      text: kResidence,
-                    ),
-                    AreaInfoText(
-                      title: "City",
-                      text: kCity,
-                    ),
-                    AreaInfoText(
-                      title: "Age",
-                      text: kAge.toString(),
-                    ),
-                    Skills(),
-                    SizedBox(height: kDefaultPadding),
-                    Coding(),
-                    Knowledge(),
-                    Divider(),
-                    SizedBox(height: kDefaultPadding / 2),
-                    TextButton(
-                      onPressed: () {},
-                      child: FittedBox(
-                        child: Row(
+        child: GetBuilder<ThemeController>(
+            init: Get.find<ThemeController>(),
+            builder: (themeC) {
+              return Column(
+                children: [
+                  MyInfo(),
+                  Expanded(
+                    child: Scrollbar(
+                      controller: _sc,
+                      child: SingleChildScrollView(
+                        controller: _sc,
+                        padding: EdgeInsets.all(kDefaultPadding),
+                        child: Column(
                           children: [
-                            Text(
-                              "DOWNLOAD CV",
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1!
-                                    .color,
+                            AreaInfoText(
+                              title: "Residence",
+                              text: kResidence,
+                            ),
+                            AreaInfoText(
+                              title: "City",
+                              text: kCity,
+                            ),
+                            AreaInfoText(
+                              title: "Age",
+                              text: kAge.toString(),
+                            ),
+                            Skills(),
+                            SizedBox(height: kDefaultPadding),
+                            Coding(),
+                            Knowledge(),
+                            Divider(),
+                            SizedBox(height: kDefaultPadding / 2),
+                            TextButton(
+                              onPressed: () {},
+                              child: FittedBox(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "DOWNLOAD CV",
+                                      style: TextStyle(
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .bodyText1!
+                                            .color,
+                                      ),
+                                    ),
+                                    SizedBox(width: kDefaultPadding / 2),
+                                    SvgPicture.asset(
+                                      "assets/icons/download.svg",
+                                      color: themeC.darkTheme
+                                          ? kIconColorDark
+                                          : kIconColorLight,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                            SizedBox(width: kDefaultPadding / 2),
-                            SvgPicture.asset("assets/icons/download.svg")
+                            Container(
+                              margin:
+                                  EdgeInsets.only(top: kDefaultPadding),
+                              color: themeC.darkTheme
+                                  ? kSecondaryColorDark
+                                  : kSecondaryColorLight,
+                              child: Row(
+                                children: [
+                                  Spacer(),
+                                  IconButton(
+                                    onPressed: () async {
+                                      meyoUrlLauncher(kLinkedInLink);
+                                    },
+                                    icon: SvgPicture.asset(
+                                      "assets/icons/linkedin.svg",
+                                      color: themeC.darkTheme
+                                          ? kIconColorDark
+                                          : kIconColorLight,
+                                    ),
+                                  ),
+                                  IconButton(
+                                    onPressed: () async {
+                                      meyoUrlLauncher(kGithubLink);
+                                    },
+                                    icon: SvgPicture.asset(
+                                      "assets/icons/github.svg",
+                                      color: themeC.darkTheme
+                                          ? kIconColorDark
+                                          : kIconColorLight,
+                                    ),
+                                  ),
+                                  IconButton(
+                                    onPressed: () async {
+                                      meyoUrlLauncher(kTwitterLink);
+                                    },
+                                    icon: SvgPicture.asset(
+                                      "assets/icons/twitter.svg",
+                                      color: themeC.darkTheme
+                                          ? kIconColorDark
+                                          : kIconColorLight,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: kDefaultPadding),
-                      color: Color(0xFF24242E),
-                      child: Row(
-                        children: [
-                          Spacer(),
-                          IconButton(
-                            onPressed: () {},
-                            icon: SvgPicture.asset(
-                                "assets/icons/linkedin.svg"),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: SvgPicture.asset(
-                                "assets/icons/github.svg"),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: SvgPicture.asset(
-                                "assets/icons/twitter.svg"),
-                          ),
-                          Spacer(),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+                  ),
+                ],
+              );
+            }),
       ),
     );
   }

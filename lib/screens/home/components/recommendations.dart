@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_dev_portfolio/screens/home/components/recommendation_card.dart';
-import '../../../constants.dart';
+import '../../../core/constants.dart';
 
 class Recommendations extends StatelessWidget {
   const Recommendations({
@@ -9,10 +9,12 @@ class Recommendations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController _sc = ScrollController();
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: kDefaultPadding,
-        horizontal: kDefaultPadding,
+      padding: const EdgeInsets.only(
+        top: kDefaultPadding,
+        bottom: kDefaultPadding,
+        right: kDefaultPadding,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,16 +24,22 @@ class Recommendations extends StatelessWidget {
             style: Theme.of(context).textTheme.headline6,
           ),
           const SizedBox(height: kDefaultPadding),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(
-                kRecommendations.length,
-                (index) => Padding(
-                  padding: const EdgeInsets.only(right: kDefaultPadding),
-                  child: RecommendationCard(
-                    recommendation: kRecommendations[index],
-                  ),
+          SizedBox(
+            height: 150,
+            width: double.infinity,
+            child: Scrollbar(
+              controller: _sc,
+              isAlwaysShown: true,
+              thickness: 5,
+              child: ListView.separated(
+                controller: _sc,
+                scrollDirection: Axis.horizontal,
+                itemCount: kRecommendations.length,
+                itemBuilder: (context, index) => RecommendationCard(
+                  recommendation: kRecommendations[index],
+                ),
+                separatorBuilder: (context, index) => SizedBox(
+                  width: kDefaultPadding,
                 ),
               ),
             ),

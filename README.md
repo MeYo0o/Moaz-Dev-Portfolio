@@ -1,15 +1,5 @@
-# Moaz Ahmed Personal Development Portfolio
+# Moaz Ahmed Development Portfolio
 
 # Firebase link to be added
 ## [Live Preview](https://github.com/MeYo0o/)
-
-**Packages we are using:**
-
-- flutter_svg: [link](https://pub.dev/packages/flutter_svg)
-- google_fonts: [link](https://pub.dev/packages/google_fonts)
-- animated_text_kit: [link](https://pub.dev/packages/animated_text_kit)
-
-**Fonts**
-
-- Poppins [link](https://fonts.google.com/specimen/Poppins)
 
