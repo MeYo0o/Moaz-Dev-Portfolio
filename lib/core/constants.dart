@@ -85,16 +85,6 @@ List<Project> kProjects = [
         "payment, and much more.",
     url: 'https://github.com/MeYo0o/E-Commerce-App',
   ),
-  Project(
-    title: "",
-    description: ".",
-    url: '',
-  ),
-  Project(
-    title: "",
-    description: ".",
-    url: '',
-  ),
 ];
 
 //Colors
