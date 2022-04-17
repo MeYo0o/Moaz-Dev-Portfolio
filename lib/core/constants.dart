@@ -47,6 +47,16 @@ const int kGithubStars = 10;
 //Recommendations
 final List<Recommendation> kRecommendations = [
   Recommendation(
+    name: "Hossam M.  🇪🇬",
+    source: "LinkedIn",
+    text: "I was happy to work with you and I hope you will be happy too.",
+  ),
+  Recommendation(
+    name: "Amr K. 🇸🇦",
+    source: "LinkedIn",
+    text: "Moaz had great ideas to help me to improve my project needs.",
+  ),
+  Recommendation(
     name: "Angel A.  🇪🇸",
     source: "Fiverr",
     text: "He created a website for me and I'm loving it. I'm looking "
@@ -68,11 +78,6 @@ final List<Recommendation> kRecommendations = [
     name: "Maksym Liman.  🇺🇦",
     source: "Upwork",
     text: "He is very skilled in Dart and Flutter",
-  ),
-  Recommendation(
-    name: "Hossam M.  🇪🇬",
-    source: "LinkedIn",
-    text: "I was happy to work with you and I hope you will be happy too.",
   ),
 ];
 
@@ -121,17 +126,17 @@ List<Project> kProjects = [
   ),
   Project(
     title: "BMI Calculator",
-    description: "A BMI Calculator with Flutter.",
+    description: "A BMI Calculator using your Weight & Height.",
     url: 'https://github.com/MeYo0o/bmi-calculator-flutter',
   ),
   Project(
     title: "Shop App",
-    description: "Simple Shopping App made with Flutter.",
+    description: "Cool Pokemon Shop App.",
     url: 'https://github.com/MeYo0o/shop_app',
   ),
   Project(
     title: "Personal Expenses App",
-    description: "A Weekly Personal Expenses App made with Flutter.",
+    description: "A Weekly Personal Expenses App.",
     url: 'https://github.com/MeYo0o/personal_expenses',
   ),
   Project(
@@ -160,6 +165,7 @@ const kIconColorLight = Colors.white;
 
 //Padding
 const kDefaultPadding = 20.0;
+const kDefaultContainerPadding = 15.0;
 const kProjectPaddingSubtraction = 5.0;
 //Durations for Animations
 const kDefaultDuration = Duration(seconds: 1);
