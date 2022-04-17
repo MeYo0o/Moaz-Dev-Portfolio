@@ -1,5 +1,7 @@
 # Moaz Ahmed Development Portfolio
 
-# Firebase link to be added
-## [Live Preview](https://github.com/MeYo0o/)
+## Will Add New Projects & Recommendations as i continue my Development Journey.
 
+## [Live Preview](https://moaz-dev.web.app)
+
+- [Inspiration](https://www.youtube.com/c/TheFlutterWay/)

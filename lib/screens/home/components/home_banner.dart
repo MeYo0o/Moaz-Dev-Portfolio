@@ -32,8 +32,8 @@ class HomeBanner extends StatelessWidget {
                       : kFadeColorLight.withOpacity(0.66),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: kDefaultPadding),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -41,17 +41,11 @@ class HomeBanner extends StatelessWidget {
                       Text(
                         "Discover my Amazing \nArt Space!",
                         style: Responsive.isDesktop(context)
-                            ? Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(
+                            ? Theme.of(context).textTheme.headline3!.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 )
-                            : Theme.of(context)
-                                .textTheme
-                                .headline5!
-                                .copyWith(
+                            : Theme.of(context).textTheme.headline5!.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
@@ -62,21 +56,18 @@ class HomeBanner extends StatelessWidget {
                       SizedBox(height: kDefaultPadding),
                       if (!Responsive.isMobileLarge(context))
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await meyoUrlLauncher(kGithubLink);
+                          },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.symmetric(
                                 horizontal: kDefaultPadding * 2,
                                 vertical: kDefaultPadding),
                             backgroundColor: kPrimaryColorDark,
                           ),
-                          child: InkWell(
-                            onTap: () async {
-                              await meyoUrlLauncher(kGithubLink);
-                            },
-                            child: Text(
-                              "EXPLORE NOW",
-                              style: TextStyle(color: kFadeColorDark),
-                            ),
+                          child: Text(
+                            "EXPLORE NOW",
+                            style: TextStyle(color: kFadeColorDark),
                           ),
                         ),
                     ],

@@ -15,28 +15,32 @@ class MyInfo extends StatelessWidget {
       init: Get.find<ThemeController>(),
       builder: (themeC) {
         return AspectRatio(
-          aspectRatio: 1.16,
+          //change this with respect to the Aligned Theme Button
+          aspectRatio: 1.23,
           child: Container(
             color: themeC.darkTheme
                 ? kSecondaryColorDark
                 : kSecondaryColorLight,
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    onPressed: () {
-                      themeC.toggleTheme();
-                    },
-                    icon: Icon(
-                      themeC.darkTheme
-                          ? FontAwesomeIcons.solidSun
-                          : FontAwesomeIcons.moon,
-                      color: themeC.darkTheme
-                          ? kIconColorDark
-                          : kIconColorLight,
-                    ),
-                  ),
+                // Align(
+                //   alignment: Alignment.topRight,
+                //   child: IconButton(
+                //     onPressed: () {
+                //       themeC.toggleTheme();
+                //     },
+                //     icon: Icon(
+                //       themeC.darkTheme
+                //           ? FontAwesomeIcons.solidSun
+                //           : FontAwesomeIcons.moon,
+                //       color: themeC.darkTheme
+                //           ? kIconColorDark
+                //           : kIconColorLight,
+                //     ),
+                //   ),
+                // ),
+                SizedBox(
+                  height: 30,
                 ),
                 CircleAvatar(
                   radius: 50,
