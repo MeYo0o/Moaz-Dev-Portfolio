@@ -14,6 +14,7 @@ const String kResidence = 'Egypt';
 const String kCity = 'Giza';
 const int _birthYear = 1993;
 final int kAge = DateTime.now().year - _birthYear;
+const String kHomeBanner = 'Discover my Amazing \nDev Space!';
 const Map<String, double> kDevSkills = {
   'Flutter': 0.75,
   'Nodejs': 0.60,
