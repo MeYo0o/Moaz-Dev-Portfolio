@@ -55,8 +55,8 @@ class ProjectsGridView extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: crossAxisCount,
           childAspectRatio: childAspectRatio,
-          crossAxisSpacing: kDefaultPadding - kProjectPaddingSubtraction,
-          mainAxisSpacing: kDefaultPadding - kProjectPaddingSubtraction,
+          crossAxisSpacing: kDefaultPadding,
+          mainAxisSpacing: kDefaultPadding,
         ),
         itemBuilder: (context, index) => ProjectCard(
           project: kProjects[index],

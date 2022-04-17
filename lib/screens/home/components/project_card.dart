@@ -21,7 +21,7 @@ class ProjectCard extends StatelessWidget {
         init: Get.find<ThemeController>(),
         builder: (themeC) {
           return Container(
-            padding: const EdgeInsets.all(kDefaultPadding),
+            padding: const EdgeInsets.all(kDefaultContainerPadding),
             color: themeC.darkTheme
                 ? kSecondaryColorDark
                 : kSecondaryColorLight,
