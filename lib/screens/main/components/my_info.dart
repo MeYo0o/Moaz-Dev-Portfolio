@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:personal_dev_portfolio/core/constants.dart';
 import 'package:personal_dev_portfolio/controllers/theme_controller.dart';
@@ -18,9 +17,7 @@ class MyInfo extends StatelessWidget {
           //change this with respect to the Aligned Theme Button
           aspectRatio: 1.23,
           child: Container(
-            color: themeC.darkTheme
-                ? kSecondaryColorDark
-                : kSecondaryColorLight,
+            color: themeC.darkTheme ? kSecondaryColorDark : kSecondaryColorLight,
             child: Column(
               children: [
                 // Align(
@@ -44,8 +41,7 @@ class MyInfo extends StatelessWidget {
                 ),
                 CircleAvatar(
                   radius: 50,
-                  backgroundImage:
-                      AssetImage("assets/images/profile-pic.jpg"),
+                  backgroundImage: AssetImage("assets/images/profile-pic.jpg"),
                 ),
                 Spacer(),
                 Text(

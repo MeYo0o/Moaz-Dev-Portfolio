@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../models/Project.dart';
-import '../models/Recommendation.dart';
 
 //User Related Stuff
 const String kUserName = 'Moaz Ahmed';
 const String kJobTitle = 'Flutter Developer';
 const String kGithubLink = 'https://github.com/MeYo0o/';
 const String kTwitterLink = 'https://twitter.com/EngMeyo';
-const String kLinkedInLink =
-    'https://www.linkedin.com/in/moaz-ahmed-146a16b8/';
+const String kLinkedInLink = 'https://www.linkedin.com/in/moaz-ahmed-146a16b8/';
 const String kResidence = 'Egypt';
 const String kCity = 'Giza';
 const int _birthYear = 1993;
@@ -44,38 +42,6 @@ const int kGithubProjects = 35;
 //Github Starts
 const int kGithubStars = 10;
 
-//Recommendations
-final List<Recommendation> kRecommendations = [
-  Recommendation(
-    name: "Angel A.  🇪🇸",
-    source: "Fiverr",
-    text: "He created a website for me and I'm loving it. I'm looking "
-        "forward to working with him in the future.",
-  ),
-  Recommendation(
-    name: "Alex M.  🇬🇧",
-    source: "Fiverr",
-    text:
-        "He helped me with my project and I am very happy with the result",
-  ),
-  Recommendation(
-    name: "Michael S.  🇺🇸",
-    source: "Fiverr",
-    text:
-        "He helped me with my wordpress plugin and I am very happy with the result",
-  ),
-  Recommendation(
-    name: "Maksym Liman.  🇺🇦",
-    source: "Upwork",
-    text: "He is very skilled in Dart and Flutter",
-  ),
-  Recommendation(
-    name: "Hossam M.  🇪🇬",
-    source: "LinkedIn",
-    text: "I was happy to work with you and I hope you will be happy too.",
-  ),
-];
-
 //Projects
 List<Project> kProjects = [
   Project(
@@ -86,8 +52,7 @@ List<Project> kProjects = [
   ),
   Project(
     title: "E-Commerce Complete App - Flutter UI",
-    description:
-        "A complete e-commerce app with firebase backend. with all the "
+    description: "A complete e-commerce app with firebase backend. with all the "
         "features like user "
         "registration, login, product item list, cart, order history, "
         "payment, and much more.",
@@ -113,14 +78,12 @@ List<Project> kProjects = [
   ),
   Project(
     title: "Meals App",
-    description:
-        "Great way to categorize your meals into multiple variates.",
+    description: "Great way to categorize your meals into multiple variates.",
     url: 'https://github.com/MeYo0o/meals_app',
   ),
   Project(
     title: "Shop App",
-    description:
-        "This Shop App is a connection between multiple vendors and clients.",
+    description: "This Shop App is a connection between multiple vendors and clients.",
     url: 'https://github.com/MeYo0o/shop_app',
   ),
   Project(
@@ -147,8 +110,7 @@ List<Project> kProjects = [
   ),
   Project(
     title: "Ask the Magic 8 Ball",
-    description:
-        "ASk it any Questions and it will give you random answers.",
+    description: "ASk it any Questions and it will give you random answers.",
     url: 'https://github.com/MeYo0o/magic-8-ball-flutter',
   ),
   Project(

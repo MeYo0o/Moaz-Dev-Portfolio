@@ -50,6 +50,7 @@ class HomeBanner extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                       ),
+                      SizedBox(height: kDefaultPadding),
                       if (Responsive.isMobileLarge(context))
                         const SizedBox(height: kDefaultPadding / 2),
                       MyBuildAnimatedText(),
