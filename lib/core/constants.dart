@@ -59,6 +59,7 @@ const kIconColorLight = Colors.white;
 
 //Padding
 const kDefaultPadding = 20.0;
+const kDefaultPaddingSmall = 10.0;
 const kProjectPaddingSubtraction = 5.0;
 //Durations for Animations
 const kDefaultDuration = Duration(seconds: 1);
