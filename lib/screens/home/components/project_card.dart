@@ -23,10 +23,8 @@ class ProjectCard extends StatelessWidget {
           return InkWell(
             onTap: () async => await meyoUrlLauncher(project.url),
             child: Container(
-              padding: const EdgeInsets.all(kDefaultContainerPadding),
-              color: themeC.darkTheme
-                  ? kSecondaryColorDark
-                  : kSecondaryColorLight,
+              padding: EdgeInsets.all(kDefaultPadding),
+              color: themeC.darkTheme ? kSecondaryColorDark : kSecondaryColorLight,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
