@@ -20,38 +20,36 @@ class ProjectCard extends StatelessWidget {
     return GetBuilder<ThemeController>(
         init: Get.find<ThemeController>(),
         builder: (themeC) {
-          return Container(
-            padding: const EdgeInsets.all(kDefaultPadding),
-            color: themeC.darkTheme
-                ? kSecondaryColorDark
-                : kSecondaryColorLight,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  project.title,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
-                Spacer(),
-                Text(
-                  project.description,
-                  maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(height: 1.45),
-                ),
-                Spacer(),
-                TextButton(
-                  onPressed: () async {
-                    await meyoUrlLauncher(project.url);
-                  },
-                  child: Text(
+          return InkWell(
+            onTap: () async => await meyoUrlLauncher(project.url),
+            child: Container(
+              padding: const EdgeInsets.all(kDefaultContainerPadding),
+              color: themeC.darkTheme
+                  ? kSecondaryColorDark
+                  : kSecondaryColorLight,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    project.title,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.subtitle2,
+                  ),
+                  Spacer(),
+                  Text(
+                    project.description,
+                    maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(height: 1.45),
+                  ),
+                  Spacer(),
+                  Text(
                     "Read More >>",
                     style: TextStyle(color: kPrimaryColorDark),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         });

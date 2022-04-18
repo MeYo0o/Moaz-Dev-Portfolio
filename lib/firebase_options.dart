@@ -26,7 +26,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
     }
 
     throw UnsupportedError(
@@ -53,16 +56,6 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA73V4xbfi5cOIYtgUo2yOlH_BbFt6wW0g',
-    appId: '1:815291183245:ios:b78e224e03e8cf60cc72c4',
-    messagingSenderId: '815291183245',
-    projectId: 'moaz-dev',
-    storageBucket: 'moaz-dev.appspot.com',
-    iosClientId: '815291183245-996l3ermq5lg7vbvlhkq18s0m1p12st5.apps.googleusercontent.com',
-    iosBundleId: 'com.example.flutterProfile',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyA73V4xbfi5cOIYtgUo2yOlH_BbFt6wW0g',
     appId: '1:815291183245:ios:b78e224e03e8cf60cc72c4',
     messagingSenderId: '815291183245',
