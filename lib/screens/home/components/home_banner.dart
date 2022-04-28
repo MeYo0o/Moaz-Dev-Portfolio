@@ -32,32 +32,27 @@ class HomeBanner extends StatelessWidget {
                       : kFadeColorLight.withOpacity(0.66),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: kDefaultPadding),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        kHomeBanner,
+                        "Discover my Amazing \nArt Space!",
                         style: Responsive.isDesktop(context)
-                            ? Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(
+                            ? Theme.of(context).textTheme.headline3!.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 )
-                            : Theme.of(context)
-                                .textTheme
-                                .headline5!
-                                .copyWith(
+                            : Theme.of(context).textTheme.headline5!.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
                       ),
-                      // if (Responsive.isMobileLarge(context))
-                      const SizedBox(height: kDefaultPadding / 2),
+                      SizedBox(height: kDefaultPadding),
+                      if (Responsive.isMobileLarge(context))
+                        const SizedBox(height: kDefaultPadding / 2),
                       MyBuildAnimatedText(),
                       SizedBox(height: kDefaultPadding),
                       if (!Responsive.isMobileLarge(context))

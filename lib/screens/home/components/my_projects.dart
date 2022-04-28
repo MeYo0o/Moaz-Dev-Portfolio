@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants.dart';
+import '../../../core/projects.dart';
 import '../../../core/responsive.dart';
 import 'project_card.dart';
 
