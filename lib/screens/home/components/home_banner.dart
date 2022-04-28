@@ -67,8 +67,9 @@ class HomeBanner extends StatelessWidget {
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.symmetric(
-                                horizontal: kDefaultPadding * 2,
-                                vertical: kDefaultPadding),
+                              horizontal: kDefaultPadding * 2,
+                              vertical: kDefaultPadding,
+                            ),
                             backgroundColor: kPrimaryColorDark,
                           ),
                           child: Text(
