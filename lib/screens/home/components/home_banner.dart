@@ -41,11 +41,17 @@ class HomeBanner extends StatelessWidget {
                       Text(
                         "Discover my Amazing \nArt Space!",
                         style: Responsive.isDesktop(context)
-                            ? Theme.of(context).textTheme.headline3!.copyWith(
+                            ? Theme.of(context)
+                                .textTheme
+                                .displaySmall!
+                                .copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 )
-                            : Theme.of(context).textTheme.headline5!.copyWith(
+                            : Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
@@ -91,7 +97,7 @@ class MyBuildAnimatedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       // it applies same style to all the widgets under it
-      style: Theme.of(context).textTheme.subtitle1!,
+      style: Theme.of(context).textTheme.titleMedium!,
       maxLines: 1,
       child: Row(
         children: [
@@ -121,19 +127,23 @@ class AnimatedText extends StatelessWidget {
     return AnimatedTextKit(
       animatedTexts: [
         TyperAnimatedText(
-          "responsive web and mobile applications.",
+          "Real World Responsive Cross-Platform Applications. [Desktop, Web & Mobile]",
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "Complete e-Commerce app UI.",
+          "Food Delivery app with Driver Location Tracking [Tiptop]",
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "Food Delivery app with dark and light theme.",
+          "Social Media / Work Platform [CVme]",
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "Payment Gateway app with multiple themes.",
+          "Learning Courses App [All Academy]",
+          speed: Duration(milliseconds: 60),
+        ),
+        TyperAnimatedText(
+          "Payment Gateway app [Wakty]",
           speed: Duration(milliseconds: 60),
         ),
       ],
