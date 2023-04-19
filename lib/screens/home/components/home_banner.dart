@@ -23,13 +23,13 @@ class HomeBanner extends StatelessWidget {
               fit: StackFit.expand,
               children: [
                 Image.asset(
-                  "assets/images/bg.png",
+                  "assets/images/bg4.jpg",
                   fit: BoxFit.cover,
                 ),
                 Container(
                   color: themeC.darkTheme
-                      ? kFadeColorDark.withOpacity(0.66)
-                      : kFadeColorLight.withOpacity(0.66),
+                      ? kFadeColorDark.withOpacity(0.50)
+                      : kFadeColorLight.withOpacity(0.50),
                 ),
                 Padding(
                   padding:
@@ -131,11 +131,11 @@ class AnimatedText extends StatelessWidget {
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "Food Delivery app with Driver Location Tracking [Tiptop]",
+          "Food Delivery app with Driver Location Tracking App [Tiptop]",
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "Social Media / Work Platform [CVme]",
+          "Social Media / Work Platform App [CVme]",
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
