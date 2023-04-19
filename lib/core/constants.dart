@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 //User Related Stuff
 const String kUserName = 'Moaz Ahmed';
-const String kJobTitle = 'Flutter Developer';
+const String kJobTitle = 'Senior Flutter Developer';
 const String kGithubLink = 'https://github.com/MeYo0o/';
 const String kTwitterLink = 'https://twitter.com/EngMeyo';
 const String kLinkedInLink = 'https://www.linkedin.com/in/moaz-ahmed-146a16b8/';
@@ -11,24 +11,25 @@ const String kCity = 'Giza';
 const int _birthYear = 1993;
 final int kAge = DateTime.now().year - _birthYear;
 const Map<String, double> kDevSkills = {
-  'Flutter': 0.75,
+  'Flutter': 0.90,
+  'Firebase': 0.85,
   'Nodejs': 0.60,
-  'Firebase': 0.70,
 };
 //Coding Skills
 const Map<String, double> kCodingSkills = {
-  'Dart': 0.75,
-  'Golang': 0.45,
+  'Flutter': 0.90,
+  'Dart': 0.90,
+  'Golang': 0.50,
   'HTML': 0.70,
   'CSS': 0.70,
-  'Javascript': 0.45,
+  'Javascript': 0.70,
 };
 //Knowledge : The Stuff that i know about
 const List<String> kKnowledge = [
   'Flutter & Dart',
-  'Golang',
-  'Firebase',
-  'AppWrite & Strapi',
+  'Golang , C#',
+  'Firebase , Appwrite',
+  'SQL & NoSQL',
   'Git & Github',
 ];
 //Youtube Subscribers
@@ -36,9 +37,9 @@ const int kYoutubeSubscribersInThousands = 1;
 //YouTube Videos
 const int kYoutubeVideos = 10;
 //Github Projects
-const int kGithubProjects = 35;
+const int kGithubProjects = 55;
 //Github Starts
-const int kGithubStars = 10;
+const int kGithubStars = 1;
 
 //Colors
 //Dark

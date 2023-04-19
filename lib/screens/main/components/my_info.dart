@@ -17,7 +17,8 @@ class MyInfo extends StatelessWidget {
           //change this with respect to the Aligned Theme Button
           aspectRatio: 1.23,
           child: Container(
-            color: themeC.darkTheme ? kSecondaryColorDark : kSecondaryColorLight,
+            color:
+                themeC.darkTheme ? kSecondaryColorDark : kSecondaryColorLight,
             child: Column(
               children: [
                 // Align(
@@ -41,12 +42,12 @@ class MyInfo extends StatelessWidget {
                 ),
                 CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage("assets/images/profile-pic.jpg"),
+                  backgroundImage: AssetImage("assets/images/profile_pic.jpg"),
                 ),
                 Spacer(),
                 Text(
                   kUserName,
-                  style: Theme.of(context).textTheme.subtitle2,
+                  style: Theme.of(context).textTheme.titleSmall,
                 ),
                 Text(
                   kJobTitle,
