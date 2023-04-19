@@ -3,14 +3,34 @@ import '../models/Project.dart';
 
 List<Project> kProjects = [
   Project(
-    title: "Food Delivery App with Firebase",
+    title: "TipTop",
+    description:
+        "Tiptop is a delivery app based in Iraq it helps with Food,Grocery&Water Delivery + a new feature [Taxi] which is basically more like Uber , so yeah , i guess we deliver people now also.",
+    url:
+        'https://apps.apple.com/tr/app/tiptop-%D8%AA%D9%8A%D8%A8-%D8%AA%D9%88%D8%A8/id1538884916',
+  ),
+  Project(
+    title: "CVme",
+    description:
+        "CVME is a LinkedIn / Facebook hybrid Multiplatform App that connects employers , companies and employees together.",
+    url: 'https://github.com/MeYo0o/cvme-production-screenshots/',
+  ),
+  Project(
+    title: "All Academy",
+    description:
+        "All Academy is a courses app that connects between Instructors & Students , mostly like Udemy.",
+    url: 'https://github.com/MeYo0o/allAcademy-production-screenshots',
+  ),
+  Project(
+    title: "Foody",
     description:
         "A food delivery app with firebase backend. with all the features like user registration, login, food item list, cart, order history, payment, and much more.",
     url: 'https://github.com/MeYo0o/foody/',
   ),
   Project(
     title: "E-Commerce Complete App - Flutter UI",
-    description: "A complete e-commerce app with firebase backend. with all the "
+    description:
+        "A complete e-commerce app with firebase backend. with all the "
         "features like user "
         "registration, login, product item list, cart, order history, "
         "payment, and much more.",
@@ -41,7 +61,8 @@ List<Project> kProjects = [
   ),
   Project(
     title: "Shop App",
-    description: "This Shop App is a connection between multiple vendors and clients.",
+    description:
+        "This Shop App is a connection between multiple vendors and clients.",
     url: 'https://github.com/MeYo0o/shop_app',
   ),
   Project(
