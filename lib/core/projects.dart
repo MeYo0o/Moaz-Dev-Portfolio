@@ -3,6 +3,12 @@ import '../models/Project.dart';
 
 List<Project> kProjects = [
   Project(
+    title: "Chatty",
+    description:
+        "Chatty is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team",
+    url: 'https://github.com/MeYo0o/slack-clone-production-screenshots/',
+  ),
+  Project(
     title: "TipTop",
     description:
         "Tiptop is a delivery app based in Iraq it helps with Food,Grocery&Water Delivery + a new feature [Taxi] which is basically more like Uber , so yeah , i guess we deliver people now also.",
