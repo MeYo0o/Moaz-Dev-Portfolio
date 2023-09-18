@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_dev_portfolio/screens/home/components/recommendation_card.dart';
+
 import '../../../core/constants.dart';
 import '../../../core/recommendations.dart';
 
@@ -22,7 +23,7 @@ class Recommendations extends StatelessWidget {
         children: [
           Text(
             "Recommendations",
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: kDefaultPadding),
           SizedBox(
@@ -30,7 +31,9 @@ class Recommendations extends StatelessWidget {
             width: double.infinity,
             child: Scrollbar(
               controller: _sc,
-              isAlwaysShown: true,
+              interactive: true,
+              // trackVisibility: true,
+              thumbVisibility: true,
               thickness: 5,
               child: ListView.separated(
                 controller: _sc,
