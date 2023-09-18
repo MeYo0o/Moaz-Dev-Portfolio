@@ -27,7 +27,7 @@ class Recommendations extends StatelessWidget {
           ),
           const SizedBox(height: kDefaultPadding),
           SizedBox(
-            height: 150,
+            height: 190,
             width: double.infinity,
             child: Scrollbar(
               controller: _sc,
