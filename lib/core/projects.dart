@@ -3,6 +3,12 @@ import '../models/Project.dart';
 
 List<Project> kProjects = [
   Project(
+    title: "Pass",
+    description:
+        "Pass is a revolutionary car parking app offering ticketless parking via plate recognition, prebooking for spot reservations, and a digital wallet for easy payments. Available in 27+ locations across Kuwait and Bahrain, with more Middle Eastern countries coming soon.",
+    url: 'https://github.com/MeYo0o/pass-production-screenshots/',
+  ),
+  Project(
     title: "Chatty",
     description:
         "Chatty is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team",
