@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:personal_dev_portfolio/controllers/theme_controller.dart';
+import 'package:personal_dev_portfolio/core/cv.dart';
 import 'package:personal_dev_portfolio/utils/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants.dart';
 import 'area_info_text.dart';
@@ -54,7 +56,16 @@ class SideMenu extends StatelessWidget {
                             Divider(),
                             SizedBox(height: kDefaultPadding / 2),
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () async {
+                                final cvUrl = CV.myCVLink;
+
+                                final Uri url = Uri.parse(cvUrl);
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(url);
+                                } else {
+                                  throw 'Could not launch $cvUrl';
+                                }
+                              },
                               child: FittedBox(
                                 child: Row(
                                   children: [
@@ -63,7 +74,7 @@ class SideMenu extends StatelessWidget {
                                       style: TextStyle(
                                         color: Theme.of(context)
                                             .textTheme
-                                            .bodyText1!
+                                            .bodyLarge!
                                             .color,
                                       ),
                                     ),
@@ -79,8 +90,7 @@ class SideMenu extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              margin:
-                                  EdgeInsets.only(top: kDefaultPadding),
+                              margin: EdgeInsets.only(top: kDefaultPadding),
                               color: themeC.darkTheme
                                   ? kSecondaryColorDark
                                   : kSecondaryColorLight,
